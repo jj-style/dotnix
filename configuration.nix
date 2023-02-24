@@ -139,7 +139,11 @@
   fonts.fonts = with pkgs; [
     corefonts
     liberation_ttf
+    noto-fonts
+    noto-fonts-emoji
+    noto-fonts-extra
     ubuntu_font_family
     terminus_font
+    dejavu_fonts
   ];
 }
