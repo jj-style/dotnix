@@ -8,6 +8,7 @@
     # misc desktop apps
     bitwarden
     bitwarden-cli
+    galculator
 
     # system apps
     gitFull
@@ -15,6 +16,9 @@
     direnv
     tree
     htop
+    wget
+    mpv
+    dmenu
     tealdeer
     ranger
     chezmoi
@@ -32,5 +36,6 @@
     delta
     gitui
     starship
+    ytfzf
   ];
 }
