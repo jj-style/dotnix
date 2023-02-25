@@ -27,20 +27,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  # Setup keyfile
-  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
-
-  # Enable grub cryptodisk
-  boot.loader.grub.enableCryptodisk = true;
-
-  boot.initrd.luks.devices."luks-f577b059-5ad2-4dd0-a10c-b4abc44642b6".keyFile =
-    "/crypto_keyfile.bin";
-  # Enable swap on luks
-  boot.initrd.luks.devices."luks-dc2b02b1-86e2-46e0-a276-004cfa1a31e6".device =
-    "/dev/disk/by-uuid/dc2b02b1-86e2-46e0-a276-004cfa1a31e6";
-  boot.initrd.luks.devices."luks-dc2b02b1-86e2-46e0-a276-004cfa1a31e6".keyFile =
-    "/crypto_keyfile.bin";
-
   # Set your time zone.
   time.timeZone = "Europe/London";
 

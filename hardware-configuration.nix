@@ -4,24 +4,23 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules =
-    [ "ehci_pci" "ahci" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/84054782-8205-4f97-9e7d-6a3abd135fcf";
-    fsType = "ext4";
-  };
-
-  boot.initrd.luks.devices."luks-f577b059-5ad2-4dd0-a10c-b4abc44642b6".device =
-    "/dev/disk/by-uuid/f577b059-5ad2-4dd0-a10c-b4abc44642b6";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/efaff01f-d84e-4699-8541-0c4ada6899b8";
+      fsType = "ext4";
+    };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/c5ccdae7-873a-4bf6-8b36-247b42d9fe08"; }];
+    [ { device = "/dev/disk/by-uuid/518b1d40-c175-47ef-b7e8-cec7b01215f8"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -30,9 +29,7 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp0s25.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s26u1u1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
