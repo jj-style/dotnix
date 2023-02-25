@@ -8,7 +8,6 @@
     # misc desktop apps
     bitwarden
     bitwarden-cli
-    rssguard
 
     # system apps
     gitFull
