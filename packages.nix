@@ -16,6 +16,7 @@
     tree
     htop
     tealdeer
+    ranger
     chezmoi
     powerline-fonts
     powerline-symbols
