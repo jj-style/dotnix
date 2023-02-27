@@ -12,7 +12,7 @@
       lightdm = {
         enable = true;
         greeters.slick.enable = true;
-        background = "/home/jj/Pictures/wallpaper/generic/nix.png";
+        background = "/usr/share/backgrounds/nix.png";
         #extraConfig = ''
         #'';
       };
