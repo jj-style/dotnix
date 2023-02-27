@@ -24,7 +24,7 @@
     chezmoi
     powerline-fonts
     powerline-symbols
-    nerdfonts
+    #nerdfonts
 
     # cli apps/utils
     fzf
